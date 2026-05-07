@@ -1,0 +1,116 @@
+.outer-container {
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+}
+
+.step-circle-container {
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.step-indicator-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 2px 0 18px;
+}
+
+.step-content-default {
+  position: relative;
+  overflow: hidden;
+}
+
+.step-default {
+  padding: 0;
+}
+
+.footer-container {
+  padding: 0;
+}
+
+.footer-nav {
+  display: flex;
+  margin-top: 22px;
+}
+
+.footer-nav.spread {
+  justify-content: space-between;
+}
+
+.footer-nav.end {
+  justify-content: flex-end;
+}
+
+.back-button {
+  border-color: #d2d2d7;
+  background: #ffffff;
+  color: #0066cc;
+  min-height: 34px;
+  padding: 0 14px;
+}
+
+.next-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0066cc;
+  color: #fff;
+  font-weight: 650;
+  min-height: 34px;
+  padding: 0 14px;
+}
+
+.step-indicator {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+.step-indicator-inner {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d2d2d7;
+  border-radius: 9999px;
+  font-weight: 700;
+}
+
+.active-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #fff;
+}
+
+.step-number {
+  font-size: 0.86rem;
+}
+
+.step-connector {
+  position: relative;
+  height: 2px;
+  flex: 1;
+  margin: 0 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background-color: #e0e0e0;
+}
+
+.step-connector-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.check-icon {
+  width: 14px;
+  height: 14px;
+  color: #fff;
+}
