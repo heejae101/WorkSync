@@ -5,6 +5,7 @@ import CardSwap, { Card } from './components/CardSwap';
 import Folder from './components/Folder';
 import Stepper, { Step } from './components/Stepper';
 import { useWorkspaceStore } from './store/useWorkspaceStore';
+import LoginPage from './components/loginPage';
 import './styles/app.css';
 
 const requirements = [
@@ -161,6 +162,7 @@ function buildPreview(file) {
 }
 
 function App() {
+  return <LoginPage />;
   const {
     activeTab,
     folders,
