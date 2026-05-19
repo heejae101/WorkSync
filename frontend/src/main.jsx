@@ -6,6 +6,7 @@ import Folder from './components/Folder';
 import Stepper, { Step } from './components/Stepper';
 import { useWorkspaceStore } from './store/useWorkspaceStore';
 import './styles/app.css';
+import EditorPage from "./tiptapEx/EditorPage";
 
 const requirements = [
   'REQ-FOLDER-001',
@@ -161,6 +162,7 @@ function buildPreview(file) {
 }
 
 function App() {
+    return <EditorPage />;
   const {
     activeTab,
     folders,
