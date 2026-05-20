@@ -7,33 +7,20 @@
 
 ```mermaid
 erDiagram
-    FOLDER ||--o{ SESSION_FILE : contains
-    FOLDER ||--o{ FOLDER_ACCESS_LOG : records
-    FOLDER ||--o{ SESSION_MEMBER : has
-    SESSION_FILE ||--o{ FILE_VERSION : versions
-    SESSION_FILE ||--o{ AI_JOB : requests
-    AI_JOB ||--o{ AI_RESULT : returns
-    SESSION_FILE ||--o{ MEETING_SUMMARY : creates
-    SESSION_FILE ||--o{ DEADLINE : extracts
-    SESSION_FILE ||--o{ WEEKLY_REPORT : creates
-    SESSION_FILE ||--o{ TIME_LOG : records
-    SESSION_FILE ||--o{ RESEARCH_NOTE : creates
-    SESSION_FILE ||--o{ CODE_REVIEW_REQUEST : creates
+    SESSION ||--o{ SESSION_MEMBER : has
+    SESSION ||--o{ AI_TASK : requests_and_stores
+    STATUS_CODE ||--o{ SESSION : defines_status
+    STATUS_CODE ||--o{ AI_TASK : defines_status
 ```
 
 ## 관계 설명
 
-| 관계 | 설명 |
-|---|---|
-| FOLDER - SESSION_FILE | 폴더는 md/html/json 파일을 포함한다. |
-| FOLDER - SESSION_MEMBER | 공유 세션 폴더는 별칭 기반 참여자를 가진다. |
-| FOLDER - FOLDER_ACCESS_LOG | 잠긴 폴더 접근 시도를 기록한다. |
-| SESSION_FILE - FILE_VERSION | 파일 수정 이력을 버전 단위로 저장한다. |
-| SESSION_FILE - AI_JOB | 파일 또는 음성 원문 기준으로 AI 작업을 요청한다. |
-| AI_JOB - AI_RESULT | AI 작업은 하나 이상의 결과를 생성한다. |
-| SESSION_FILE - MEETING_SUMMARY | 세션 파일 또는 업로드 파일에서 회의록 요약이 생성된다. |
-| SESSION_FILE - DEADLINE | AI가 파일/요약에서 마감일을 추출한다. |
-| SESSION_FILE - WEEKLY_REPORT | 파일 기록을 기반으로 주간 보고서를 생성한다. |
+| 관계                             | 설명                              |
+| ------------------------------ | ------------------------------- |
+| SESSION - SESSION_MEMBER       | 공유 세션에 참여하는 다수의 사용자를 기록한다.       |
+| SESSION - AI_TASK              | 세션 데이터를 기반으로 AI 작업을 요청하고 그 결과 및 상태를 함께 저장한다.   |
+| STATUS_CODE - SESSION          | 세션의 상태(ACTIVE, ARCHIVED 등)를 공통 코드로 관리한다. |
+| STATUS_CODE - AI_TASK          | AI 작업의 상태(PENDING, SUCCESS 등)를 공통 코드로 관리한다. |
 
 ## 미결정 사항
 
